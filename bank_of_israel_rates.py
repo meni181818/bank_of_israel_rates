@@ -35,11 +35,11 @@ class CurrencyRate:
         self._xml_element = currency_xml_element
         self.last_update = last_update
         self.name = self._xml_element[0].text
-        self.unit = self._xml_element[1].text
+        self.unit = int(self._xml_element[1].text)
         self.currency_code = self._xml_element[2].text
         self.country = self._xml_element[3].text
-        self.rate = self._xml_element[4].text
-        self.change = self._xml_element[5].text
+        self.rate = float(self._xml_element[4].text)
+        self.change = float(self._xml_element[5].text)
     
     def as_dict(self) -> Dict[str, str]:
         return {
