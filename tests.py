@@ -10,3 +10,6 @@ class SingleRateTests(TestCase):
         expected = {'last_update': '2021-12-10', 'name': 'Dollar', 'unit': 1,
                     'currency_code': 'USD', 'country': 'USA', 'rate': 3.103, 'change': -0.032}
         self.assertDictEqual(self._2021_12_10.as_dict(), expected)
+        
+    def test_fail(self):
+        self.fail('meant to fail')
